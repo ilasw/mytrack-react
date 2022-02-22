@@ -1,0 +1,56 @@
+.Toggle {
+  cursor: pointer;
+
+  .switch {
+    align-items: center;
+    background-color: #212944;
+    border-radius: .85rem;
+    color: $color-primary-carcoal;
+    display: inline-flex;
+    font-size: 0;
+    justify-content: flex-start;
+    height: 1.6rem;
+    padding: .15rem;
+    position: relative;
+    transition: background-color .3s ease;
+    width: 3rem;
+
+    &:before {
+      background: currentColor;
+      border-radius: 50%;
+      content: "";
+      display: block;
+      font-size: 1.3rem;
+      height: 1em;
+      width: 1em;
+    }
+
+    &:hover{
+      background-color: #27334F;
+    }
+  }
+
+  .input {
+    display: block;
+    height: 0;
+    opacity: 0;
+    width: 0;
+
+    /*
+    Remove for accessibility:
+
+    &:focus{
+      ~ .switch{
+        outline: 1px solid $color-primary-gray;
+      }
+    }
+    */
+
+    &:checked {
+      ~ .switch {
+        color: $color-primary-gray;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

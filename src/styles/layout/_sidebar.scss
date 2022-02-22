@@ -1,0 +1,13 @@
+.Sidebar {
+  padding: 2rem;
+
+  .title {
+    font: {
+      size: 1.2rem;
+      weight: 800;
+    }
+    line-height: 0.865;
+    margin: 0 0 5rem;
+    padding: 0 var(--cta-gap-size);
+  }
+}

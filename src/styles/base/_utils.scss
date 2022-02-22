@@ -1,0 +1,15 @@
+.\--text-uppercase {
+  text-transform: uppercase;
+}
+
+:root{
+  @each $name, $color in $color-palette {
+    .\--color-#{$name+''} {
+      color: $color;
+    }
+
+    .\--background-color-#{$name+''} {
+      background-color: $color;
+    }
+  }
+}

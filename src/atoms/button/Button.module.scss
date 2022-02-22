@@ -1,0 +1,36 @@
+.Button {
+  --button-background-color: #{$color-primary-blue};
+
+  align-items: center;
+  border: 0;
+  border-radius: .6rem;
+  background-color: var(--button-background-color);
+  color: $color-primary-gray;
+  cursor: pointer;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  font-size: .7rem;
+  gap: .5rem;
+  line-height: 2rem;
+  overflow: hidden;
+  padding: 0 var(--cta-gap-size);
+  text-overflow: ellipsis;
+  transition: opacity .3s ease;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &.\--variant {
+    &-success {
+      --button-background-color: #{$color-primary-green};
+    }
+  }
+
+  &:is(:disabled) {
+    --button-background-color: #{$color-primary-carcoal};
+    cursor: not-allowed;
+  }
+
+  &:hover{
+    opacity: .8;
+  }
+}

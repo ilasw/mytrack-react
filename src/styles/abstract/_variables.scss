@@ -1,0 +1,19 @@
+$color-primary-black: #141B2C;
+$color-primary-navy: #202A43;
+$color-primary-navy-dark: #212944;
+$color-primary-navy-darker: #27334F;
+
+$color-primary-green: #82C94E;
+$color-primary-gray: #CBDDF0;
+$color-primary-blue: #4788C7;
+$color-primary-carcoal: #425277;
+
+$color-palette: (
+    white: #fff,
+    black: $color-primary-black,
+    navy: $color-primary-navy,
+    green: $color-primary-green,
+    gray: $color-primary-gray,
+    blue: $color-primary-blue,
+    carcoal: $color-primary-carcoal,
+)
