@@ -1,37 +1,37 @@
-import React from 'react';
+import React, {useMemo} from 'react';
+import {useTodoList} from "@/hooks";
+import {Aside, TaskList, TaskSubmitForm} from "@/components";
+
 import './styles/main.scss';
-import Toggle from "./atoms/toggle/Toggle";
-import Button from "./atoms/button/Button";
-import useTodoList from "./hooks/use-todo-list";
 
 function App() {
-  const {list, remove} = useTodoList();
+  const {allItems, todoItems, doneItems, add, remove, toggle} = useTodoList();
+  const taskCounter = useMemo(() => `${doneItems.length}/${allItems.length}`, [allItems.length, doneItems.length])
 
   return (
       <div className="App">
-        <aside className="Sidebar">
-          <h1 className="title">MyTrack</h1>
 
-          <nav className="nav">
-            <ul className="nav-menu">
-              <li className="nav-menu-item">a</li>
-            </ul>
-          </nav>
-        </aside>
+        <Aside taskCounter={taskCounter}/>
+
         <main className="Main">
-          <div className="h2">Main app</div>
-          <div><Toggle/></div>
-          <div>
-            <Button variant={'success'}>COMPLETE</Button>
-            <Button icon={'calendar'} counter={`0/${list.length}`}>ADD</Button>
-            <Button variant={'success'} disabled>Disabled</Button>
-          </div>
-          <ul className="list">
-            {list.map(item => <li className="list-item"
-                                  key={item.id}
-                                  onClick={() => remove(item.id)}
-            >{item.text}</li>)}
-          </ul>
+
+          <TaskSubmitForm onAddTask={add}/>
+
+          {!!todoItems?.length && (
+              <TaskList heading="In progress"
+                        items={todoItems}
+                        onRemove={remove}
+                        onToggle={toggle}
+              />
+          )}
+
+          {!!doneItems?.length && (
+              <TaskList heading=" Done"
+                        items={doneItems}
+                        onRemove={remove}
+                        onToggle={toggle}
+              />
+          )}
         </main>
       </div>
   );

@@ -18,7 +18,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/atoms": [
+        "./src/atoms/",
+        "./src/atoms/*"
+      ],
+      "@/components": [
+        "./src/components/",
+        "./src/components/*"
+      ],
+      "@/hooks": [
+        "./src/hooks/",
+        "./src/hooks/*"
+      ]
+    }
   },
   "include": [
     "src"

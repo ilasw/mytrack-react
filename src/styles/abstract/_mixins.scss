@@ -1,0 +1,27 @@
+@mixin media-breakpoint-up($breakpoint) {
+
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @media (min-width: #{$breakpoint-value}px) {
+      @content;
+    }
+
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @media (max-width: #{($breakpoint-value - 1)}px) {
+      @content;
+    }
+
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}

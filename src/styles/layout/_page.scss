@@ -1,5 +1,10 @@
 .App {
-  display: grid;
-  grid-template: 1fr / 16.5rem 1fr;
   min-height: 100vh;
+  padding: 0 0 3rem;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template: 1fr / 16.5rem 1fr;
+    padding: 0;
+  }
 }

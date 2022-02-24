@@ -1,0 +1,34 @@
+.TaskSubmitForm {
+  margin: 2rem 0;
+
+  .input {
+    background-color: transparent;
+    border: 0;
+    color: $color-primary-gray;
+    flex: 1;
+    margin: -.5rem 0 -.5rem -.5rem;
+    padding: .5rem 1rem;
+
+    &:focus{
+      outline: 0;
+    }
+  }
+
+  .card {
+    align-items: center;
+    background-color: $color-primary-black;
+    border-radius: .6rem;
+    display: flex;
+    gap: 3rem;
+    margin-bottom: .75rem;
+    overflow: hidden;
+    padding: .5rem;
+  }
+
+  .priority {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+  }
+}

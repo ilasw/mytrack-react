@@ -14,14 +14,45 @@
   line-height: 2rem;
   overflow: hidden;
   padding: 0 var(--cta-gap-size);
+  text-align: left;
   text-overflow: ellipsis;
   transition: opacity .3s ease;
   vertical-align: middle;
   white-space: nowrap;
 
+  .text {
+    flex: 1;
+  }
+
   &.\--variant {
     &-success {
       --button-background-color: #{$color-primary-green};
+    }
+
+    &-ghost {
+      --button-background-color: transparent;
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+        gap: .25rem;
+        padding: .5rem;
+      }
+
+      .text {
+        @include media-breakpoint-down(md) {
+          font-size: .4rem;
+          line-height: .7rem;
+        }
+      }
+
+      &:hover,
+      &:global(.\--active) {
+        color: #fff;
+
+        @include media-breakpoint-up(md) {
+          --button-background-color: #{$color-primary-navy-dark};
+        }
+      }
     }
   }
 
@@ -30,7 +61,7 @@
     cursor: not-allowed;
   }
 
-  &:hover{
+  &:not(.\--variant-ghost):hover {
     opacity: .8;
   }
 }

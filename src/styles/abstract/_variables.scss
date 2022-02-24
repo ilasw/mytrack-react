@@ -8,6 +8,8 @@ $color-primary-gray: #CBDDF0;
 $color-primary-blue: #4788C7;
 $color-primary-carcoal: #425277;
 
+$color-primary-red: #CD5050;
+
 $color-palette: (
     white: #fff,
     black: $color-primary-black,
@@ -16,4 +18,11 @@ $color-palette: (
     gray: $color-primary-gray,
     blue: $color-primary-blue,
     carcoal: $color-primary-carcoal,
-)
+    red: $color-primary-red,
+);
+
+$breakpoints: (
+    xs: 0,
+    md: 768,
+    lg: 1024,
+);

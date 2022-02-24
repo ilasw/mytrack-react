@@ -2,14 +2,14 @@ import {ComponentProps, FC} from "react";
 import styles from './Button.module.scss';
 import Counter from "../counter/Counter";
 
-type IconName = 'calendar' | 'charts' | 'dashboard' | 'settings' | 'teams' | 'trash';
-type ButtonProps = ComponentProps<'button'> & {
+export type IconName = 'calendar' | 'charts' | 'dashboard' | 'settings' | 'teams' | 'trash';
+export type ButtonProps = ComponentProps<'button'> & {
   counter?: string,
   icon?: IconName,
-  variant?: 'success' | 'submit',
+  variant?: 'success' | 'submit' | 'ghost',
 }
 
-const Button: FC<ButtonProps> = props => {
+export const Button: FC<ButtonProps> = props => {
   const {
     children,
     className = '',
@@ -23,7 +23,7 @@ const Button: FC<ButtonProps> = props => {
                  {...attrs}
   >{!!icon?.length && (
       <img src={`/icons/icon-${icon}.svg`} alt={icon}/>
-  )}<span className="text">{children}</span>{!!counter?.length && (
+  )}<span className={styles.text}>{children}</span>{!!counter?.length && (
       <Counter className={'--background-color-white'}>{counter}</Counter>
   )}</button>;
 }

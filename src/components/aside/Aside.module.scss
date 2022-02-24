@@ -1,0 +1,75 @@
+.Aside {
+  background-color: $color-primary-black;
+
+  @include media-breakpoint-down(md) {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 2rem;
+  }
+
+  .title {
+    display: none;
+    font: {
+      size: 1.2rem;
+      weight: 800;
+    }
+    line-height: 0.865;
+    margin: 0 0 5rem;
+    padding: 0 var(--cta-gap-size);
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  .nav {
+
+    &,
+    &-menu {
+      @include media-breakpoint-up(md) {
+        display: flex;
+        flex: 1;
+        flex-flow: column nowrap;
+      }
+    }
+
+    &-menu {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+
+      @include media-breakpoint-down(md) {
+        display: flex;
+        flex-flow: row nowrap;
+      }
+    }
+
+    &-menu-item {
+      display: block;
+
+      @include media-breakpoint-down(md) {
+        flex: 1;
+      }
+
+      @include media-breakpoint-up(md) {
+        margin: 0 0 .5rem;
+
+        &:last-child {
+          display: flex;
+          flex: 1;
+          flex-flow: column nowrap;
+          justify-content: flex-end;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

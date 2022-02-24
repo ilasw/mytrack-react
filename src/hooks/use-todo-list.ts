@@ -1,45 +1,52 @@
 import {useMemo, useState} from "react";
 
-type ListItem = {
+export type Task = {
   id: number,
   completed: boolean,
   text: string,
   priority: 'medium' | 'high'
 }
 
-const INITAL_LIST: ListItem[] = [
+const INITAL_LIST: Task[] = [
   {id: 1, text: 'Task media', completed: false, priority: 'medium'},
   {id: 2, text: 'Task media 2', completed: false, priority: 'medium'},
-  {id: 3, text: 'Task alta', completed: false, priority: 'high'},
+  {id: 3, text: 'Task alta', completed: true, priority: 'high'},
   {id: 4, text: 'Task media 3', completed: false, priority: 'medium'},
   {id: 5, text: 'Task alta 2', completed: false, priority: 'high'},
 ]
 
 export const useTodoList = () => {
-  const [items, setItems] = useState<ListItem[]>(INITAL_LIST);
+  const [items, setItems] = useState<Task[]>(INITAL_LIST);
 
   const sortedList = useMemo(
-      () => items.sort((_, b) => b.priority === 'high' ? 1 : -1),
+      () => items.sort((a, b) => {
+        if( b.priority === 'high') return 0;
+        return a.priority === 'high' ? -1 : 1
+      }),
       [items]
   );
+  const {todoList = [], doneList = []} = useMemo(() => sortedList.reduce((acc: Record<string, Task[]>, item) => {
+    const toUpdateKey = item.completed ? 'doneList' : 'todoList';
+    return {...acc, [toUpdateKey]: (acc[toUpdateKey] ?? []).concat([item])}
+  }, {}), [sortedList])
 
-  const add = ({text = '', priority = 'medium'}: Partial<ListItem>) => {
+  const add = ({text = '', priority = 'medium'}: Partial<Task>) => {
     const newItem = {id: new Date().getTime(), text, completed: false, priority};
     setItems(items => [...items, newItem])
   }
 
-  const remove = (id: ListItem['id']) => {
+  const remove = (id: Task['id']) => {
     setItems(items => items.filter(item => item.id !== id))
   };
 
-  const complete = (id: ListItem['id']) => {
+  const toggle = (id: Task['id'], force?: boolean) => {
     setItems(items => items.map(item => ({
       ...item,
-      ...(item.id === id && {completed: true})
+      ...(item.id === id && {completed: force ?? !item.completed})
     })))
   }
 
-  return {list: sortedList, add, remove, complete}
+  return {allItems: sortedList, todoItems: todoList, doneItems: doneList, add, remove, toggle}
 }
 
 export default useTodoList;

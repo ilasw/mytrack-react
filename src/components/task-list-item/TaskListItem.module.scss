@@ -1,0 +1,66 @@
+.TaskListItem {
+  align-items: center;
+  background-color: $color-primary-black;
+  border-radius: .6rem;
+  display: flex;
+  gap: .6rem;
+  margin-bottom: .75rem;
+  padding: 1rem;
+
+  .priority {
+    background-color: $color-primary-carcoal;
+    border-radius: 50%;
+    display: inline-block;
+    height: .4rem;
+    width: .4rem;
+    margin-right: -.2rem;
+
+    &.\--priority-high {
+      background-color: $color-primary-red;
+    }
+  }
+
+  .text {
+    cursor: pointer;
+    flex: 1;
+    min-width: 0;
+    margin: -.6rem 0;
+    padding: .6rem 0;
+  }
+
+  .trash {
+    background: transparent;
+    border: transparent;
+    border-radius:50%;
+    cursor: pointer;
+    margin: -.6rem;
+    padding: .6rem;
+    transition: .2s opacity ease-in-out;
+
+    :global(img){
+      height:1em;
+      font-size: 1rem;
+      object-fit: contain;
+      object-position: center;
+      width:1em;
+    }
+
+    &:hover{
+      background-color: $color-primary-navy-dark;
+    }
+  }
+
+  &:not(:hover) {
+    .trash {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &.\--state-completed {
+    .text {
+      color: $color-primary-carcoal;
+      text-decoration: line-through;
+    }
+  }
+}

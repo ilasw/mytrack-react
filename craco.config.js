@@ -11,6 +11,13 @@ module.exports = {
       }
     },
   },
+  webpack: {
+    alias: {
+      '@/atoms': path.resolve(__dirname, 'src/atoms'),
+      '@/components': path.resolve(__dirname, 'src/components'),
+      '@/hooks': path.resolve(__dirname, 'src/hooks'),
+    }
+  },
   plugins: [
     {
       plugin: sassResourcesLoader,

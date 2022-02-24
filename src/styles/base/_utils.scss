@@ -1,8 +1,21 @@
-.\--text-uppercase {
-  text-transform: uppercase;
-}
+:root {
 
-:root{
+  .d-flex{
+    display: flex;
+  }
+
+  .w-100{
+    width: 100%;
+  }
+
+  .\--text-uppercase {
+    text-transform: uppercase;
+  }
+
+  .\--text-capitalize {
+    text-transform: capitalize;
+  }
+
   @each $name, $color in $color-palette {
     .\--color-#{$name+''} {
       color: $color;
