@@ -39,13 +39,12 @@ export const TaskModal: FC<TaskModalProps> = props => {
 
         <header className={styles.header}>
           <h2 className={"heading"}>{!!task
-              ? <><span className={`priority-dot ${styles['--priority-' + task.priority]}`}/> <span>Task</span></>
+              ? <><span className={`priority-dot --priority-${task.priority}`}/> <span>Task</span></>
               : 'New task'
           }</h2>
-          <button className="close"
+          <button className={styles.close}
                   onClick={() => onClose()}
-          >X
-          </button>
+          />
         </header>
 
         <div className={styles.body}>

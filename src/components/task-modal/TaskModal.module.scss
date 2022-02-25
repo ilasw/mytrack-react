@@ -40,6 +40,41 @@
   .header {
     border-bottom: 1px solid transparentize($color-gray, .9);
 
+    .close {
+      background-color: transparent;
+      border: 0;
+      border-radius: 50%;
+      color: $color-gray;
+      cursor: pointer;
+      height: 2rem;
+      position: relative;
+      transition: background-color .2s ease;
+      width: 2rem;
+
+      &:hover {
+        background-color: $color-carcoal;
+      }
+
+      &:before,
+      &:after {
+        border-top: .1rem solid;
+        content: "";
+        display: block;
+        font-size: 1.2rem;
+        height: .1rem;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: rotate(.375turn) translate(.35em, .35em);
+        transform-origin: center center;
+        width: 1em;
+      }
+
+      &:after {
+        transform: rotate(-.375turn) translate(.35em, -.35em);
+      }
+    }
+
     :global(.heading) {
       margin: 0;
 
