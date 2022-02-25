@@ -2,7 +2,7 @@
   cursor: pointer;
 
   .square {
-    border: 1px solid $color-primary-gray;
+    border: 1px solid $color-gray;
     background-color: transparent;
     border-radius: .2rem;
     color: #fff;
@@ -43,15 +43,15 @@
 
     &:focus{
       ~ .square{
-        outline: 1px solid $color-primary-gray;
+        outline: 1px solid $color-gray;
       }
     }
     */
 
     &:checked {
       ~ .square {
-        background-color: $color-primary-green;
-        border-color: $color-primary-green;
+        background-color: $color-green;
+        border-color: $color-green;
 
         &:before{
           opacity: 1;

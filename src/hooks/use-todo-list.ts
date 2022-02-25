@@ -8,11 +8,11 @@ export type Task = {
 }
 
 const INITAL_LIST: Task[] = [
-  {id: 1, text: 'Task media', completed: false, priority: 'medium'},
-  {id: 2, text: 'Task media 2', completed: false, priority: 'medium'},
-  {id: 3, text: 'Task alta', completed: true, priority: 'high'},
-  {id: 4, text: 'Task media 3', completed: false, priority: 'medium'},
-  {id: 5, text: 'Task alta 2', completed: false, priority: 'high'},
+  {id: 1, text: 'Andare a comprare il pane', completed: false, priority: 'medium'},
+  {id: 2, text: 'Stendere i panni', completed: false, priority: 'medium'},
+  {id: 3, text: 'Task inzialmente conclusa ed alta priorità', completed: true, priority: 'high'},
+  {id: 4, text: 'Fare code review per @Ilasw', completed: false, priority: 'medium'},
+  {id: 5, text: 'Ascolta il nuovo album di Rkomi', completed: false, priority: 'high'},
 ]
 
 export const useTodoList = () => {

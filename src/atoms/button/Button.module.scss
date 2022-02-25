@@ -1,11 +1,11 @@
 .Button {
-  --button-background-color: #{$color-primary-blue};
+  --button-background-color: #{$color-blue};
 
   align-items: center;
   border: 0;
   border-radius: .6rem;
   background-color: var(--button-background-color);
-  color: $color-primary-gray;
+  color: $color-gray;
   cursor: pointer;
   display: inline-flex;
   flex-flow: row nowrap;
@@ -26,7 +26,7 @@
 
   &.\--variant {
     &-success {
-      --button-background-color: #{$color-primary-green};
+      --button-background-color: #{$color-green};
     }
 
     &-ghost {
@@ -50,14 +50,14 @@
         color: #fff;
 
         @include media-breakpoint-up(md) {
-          --button-background-color: #{$color-primary-navy-dark};
+          --button-background-color: #{$color-navy-dark};
         }
       }
     }
   }
 
   &:is(:disabled) {
-    --button-background-color: #{$color-primary-carcoal};
+    --button-background-color: #{$color-carcoal};
     cursor: not-allowed;
   }
 

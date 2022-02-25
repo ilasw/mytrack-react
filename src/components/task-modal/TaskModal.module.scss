@@ -1,0 +1,85 @@
+.TaskModal {
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+
+  .overlay, .modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .overlay {
+    background-color: $color-black-overlay;
+    cursor: pointer;
+    height: 100%;
+    opacity: 0.9;
+    width: 100%;
+    z-index: 98;
+  }
+
+  .modal {
+    background: $color-black;
+    border-radius: .6rem;
+    margin: 2rem auto;
+    width: min(90%, 40.5rem);
+    z-index: 99;
+  }
+
+  .header,
+  .body,
+  .actions {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+  }
+
+  .header {
+    border-bottom: 1px solid transparentize($color-gray, .9);
+
+    :global(.heading) {
+      margin: 0;
+
+    }
+
+    :global(.priority-dot) {
+      margin-right: .2rem;
+    }
+  }
+
+  .body {
+    .input {
+      background-color: transparent;
+      border: 0;
+      color: $color-gray;
+      flex: 1;
+      display: block;
+      margin: -.6rem;
+      padding: .6rem;
+    }
+  }
+
+  .actions {
+    .trash {
+      background-color: $color-navy-dark;
+      border: 0;
+      border-radius: .4rem;
+      cursor: pointer;
+      padding: .4rem .5rem;
+    }
+
+    .priority {
+      align-items: center;
+      display: flex;
+      gap: 0.4rem;
+
+      :global(.label-text) {
+        font-size: .6rem;
+      }
+    }
+  }
+
+}

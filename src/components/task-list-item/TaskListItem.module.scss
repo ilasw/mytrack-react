@@ -1,24 +1,11 @@
 .TaskListItem {
   align-items: center;
-  background-color: $color-primary-black;
+  background-color: $color-black;
   border-radius: .6rem;
   display: flex;
   gap: .6rem;
   margin-bottom: .75rem;
   padding: 1rem;
-
-  .priority {
-    background-color: $color-primary-carcoal;
-    border-radius: 50%;
-    display: inline-block;
-    height: .4rem;
-    width: .4rem;
-    margin-right: -.2rem;
-
-    &.\--priority-high {
-      background-color: $color-primary-red;
-    }
-  }
 
   .text {
     cursor: pointer;
@@ -46,7 +33,7 @@
     }
 
     &:hover{
-      background-color: $color-primary-navy-dark;
+      background-color: $color-navy-dark;
     }
   }
 
@@ -59,7 +46,7 @@
 
   &.\--state-completed {
     .text {
-      color: $color-primary-carcoal;
+      color: $color-carcoal;
       text-decoration: line-through;
     }
   }

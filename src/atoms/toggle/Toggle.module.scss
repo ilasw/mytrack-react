@@ -5,7 +5,7 @@
     align-items: center;
     background-color: #212944;
     border-radius: .85rem;
-    color: $color-primary-carcoal;
+    color: $color-carcoal;
     display: inline-flex;
     font-size: 0;
     justify-content: flex-start;
@@ -41,14 +41,14 @@
 
     &:focus{
       ~ .switch{
-        outline: 1px solid $color-primary-gray;
+        outline: 1px solid $color-gray;
       }
     }
     */
 
     &:checked {
       ~ .switch {
-        color: $color-primary-gray;
+        color: $color-gray;
         justify-content: flex-end;
       }
     }

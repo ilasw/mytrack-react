@@ -1,5 +1,5 @@
 .Aside {
-  background-color: $color-primary-black;
+  background-color: $color-black;
 
   @include media-breakpoint-down(md) {
     bottom: 0;

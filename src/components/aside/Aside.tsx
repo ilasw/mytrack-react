@@ -22,12 +22,12 @@ export const Aside: FC<{ taskCounter: string }> = props => {
         </li>
 
         {menuItems.map(name => (
-            <li className={styles["nav-menu-item"]}>
-              <Button icon={name}
-                      className={'d-flex w-100 --text-capitalize'}
-                      variant={'ghost'}
-              >{name}</Button>
-            </li>
+            <li className={styles["nav-menu-item"]}
+                key={name}
+            ><Button icon={name}
+                     className={'d-flex w-100 --text-capitalize'}
+                     variant={'ghost'}
+            >{name}</Button></li>
         ))}
       </ul>
     </nav>

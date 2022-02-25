@@ -1,0 +1,12 @@
+.priority-dot {
+  background-color: $color-carcoal;
+  border-radius: 50%;
+  display: inline-block;
+  height: .4rem;
+  width: .4rem;
+  margin-right: -.2rem;
+
+  &.\--priority-high {
+    background-color: $color-red;
+  }
+}

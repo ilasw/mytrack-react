@@ -1,24 +1,26 @@
-$color-primary-black: #141B2C;
-$color-primary-navy: #202A43;
-$color-primary-navy-dark: #212944;
-$color-primary-navy-darker: #27334F;
+$color-black: #141B2C;
+$color-black-overlay: #020713;
 
-$color-primary-green: #82C94E;
-$color-primary-gray: #CBDDF0;
-$color-primary-blue: #4788C7;
-$color-primary-carcoal: #425277;
+$color-navy: #202A43;
+$color-navy-dark: #212944;
+$color-navy-darker: #27334F;
 
-$color-primary-red: #CD5050;
+$color-green: #82C94E;
+$color-gray: #CBDDF0;
+$color-blue: #4788C7;
+$color-carcoal: #425277;
+
+$color-red: #CD5050;
 
 $color-palette: (
     white: #fff,
-    black: $color-primary-black,
-    navy: $color-primary-navy,
-    green: $color-primary-green,
-    gray: $color-primary-gray,
-    blue: $color-primary-blue,
-    carcoal: $color-primary-carcoal,
-    red: $color-primary-red,
+    black: $color-black,
+    navy: $color-navy,
+    green: $color-green,
+    gray: $color-gray,
+    blue: $color-blue,
+    carcoal: $color-carcoal,
+    red: $color-red,
 );
 
 $breakpoints: (

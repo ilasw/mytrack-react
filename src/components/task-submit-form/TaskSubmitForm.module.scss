@@ -4,19 +4,19 @@
   .input {
     background-color: transparent;
     border: 0;
-    color: $color-primary-gray;
+    color: $color-gray;
     flex: 1;
     margin: -.5rem 0 -.5rem -.5rem;
     padding: .5rem 1rem;
 
-    &:focus{
+    &:focus {
       outline: 0;
     }
   }
 
   .card {
     align-items: center;
-    background-color: $color-primary-black;
+    background-color: $color-black;
     border-radius: .6rem;
     display: flex;
     gap: 3rem;
@@ -30,5 +30,22 @@
     display: flex;
     flex-flow: row nowrap;
     gap: 1rem;
+  }
+
+  .add {
+    background-color: $color-black;
+    border: 0;
+    border-radius: .6rem;
+    color:$color-gray;
+    cursor: pointer;
+    display: block;
+    line-height:3rem;
+    text-align: center;
+    transition:  background-color .3s ease;
+    width: 100%;
+
+    &:hover{
+      background-color:$color-carcoal;
+    }
   }
 }
